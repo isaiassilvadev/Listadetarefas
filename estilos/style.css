@@ -1,0 +1,105 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --corbase: #ffff;
+  --cordefundo: #523975;
+  --corfonte1: #111827;
+  --corsucesso: #559e68;
+  --cordestaque: #f29316;
+  --corapoio: #735a3b;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cordefundo);
+  color: var(--corfonte1);
+}
+
+section {
+  padding: 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#todolist {
+  align-items: center;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: var(--corbase);
+  align-items: right;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.486);
+}
+
+#items {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+form > input#item {
+  width: 250px;
+  border: 2px solid var(--corfonte1);
+  border-radius: 5px;
+}
+
+form > input.adc {
+  background-color: var(--cordestaque);
+  border: none;
+  color: var(--corbase);
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 12px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+ul {
+  width: 100%;
+  /* height: 200px; */
+}
+
+ul > li {
+  list-style-type: none;
+}
+
+li {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+li > button {
+  background-color: transparent;
+  border: none;
+  color: var(--corapoio);
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-left: auto;
+}
+
+li > button:hover {
+  background-color: var(--corsucesso);
+  border-radius: 12px;
+  color: var(--corbase);
+  padding: 6px;
+  transition: all 0.3s;
+}
+
+input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
