@@ -1,6 +1,13 @@
+*{}
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 :root {
@@ -27,17 +34,23 @@ section {
   flex-direction: column;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 #todolist {
   align-items: center;
   border-radius: 10px;
-  padding: 16px;
+  padding: 1em;
   background-color: var(--corbase);
   align-items: right;
   margin-bottom: 14px;
   display: flex;
   flex-direction: column;
   height: auto;
-  width: 400px;
+  width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.486);
 }
 
@@ -48,6 +61,11 @@ section {
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
+}
+
+#items input[type="text"] {
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 form > input#item {
@@ -78,12 +96,21 @@ ul > li {
   list-style-type: none;
 }
 
-li {
-  padding: 5px;
+.it li {
+  padding: 10px 12px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 8px 12px;
+  margin-bottom: 6px;
 }
-li > button {
+
+.it li > button {
   background-color: transparent;
   border: none;
   color: var(--corapoio);
@@ -91,9 +118,10 @@ li > button {
   font-size: 16px;
   margin-right: 10px;
   margin-left: auto;
+  flex-shrink: 0;
 }
 
-li > button:hover {
+.it li > button:hover {
   background-color: var(--corsucesso);
   border-radius: 12px;
   color: var(--corbase);
@@ -101,7 +129,56 @@ li > button:hover {
   transition: all 0.3s;
 }
 
+.it li span {
+  flex: 1;
+  word-break: break-word;
+  over-flow-wrap: break-word;
+}
+
 input[type="checkbox"]:checked + span {
   text-decoration: line-through;
   opacity: 0.6;
+}
+
+@media (max-width: 560px) {
+  .it li {
+    font-size: 0.9em;
+  }
+  .it li button {
+    padding: 4px 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  #todolist {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .it li {
+    padding: 10px 12px;
+    margin-bottom: 3px;
+    font-size: 1em;
+  }
+
+  .it li button {
+    padding: 6px 12px;  
+  }
+}
+
+@media (min-width: 1024px) {
+  #todolist {
+    max-width: 720px;
+  }
+
+  .it li {
+    font-size: 0.95em;
+    padding: 6px 10px;
+    margin-bottom: 4px;
+  }
+
+  .it li button {
+    padding: 4px 8px;
+    font-size: 0.85em;
+  }
 }
