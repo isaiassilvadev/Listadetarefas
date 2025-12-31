@@ -10,17 +10,22 @@ function Adicionar() {
     var check = document.createElement('input')
     var texto = document.createElement('span')
     check.setAttribute('type', 'checkbox')
-    item.appendChild(check);
-    item.appendChild(texto);
-    it.appendChild(item);
     texto.innerText = valor;
     var btn = document.createElement('button');
     btn.innerText = 'Excluir';
-    btn.setAttribute('onclick', 'Excluir(this)');
+    btn.addEventListener('click', excluir)
+    item.appendChild(check);
+    item.appendChild(texto);
+    it.appendChild(item);
     item.appendChild(btn);
   }
-  valor.innerText = '';
   let input = document.querySelector('input#item');
   input.value = '';
   input.focus();
+}
+
+function excluir(event) {
+  let botao = event.target;
+  let item = botao.parentNode;
+  item.remove()
 }

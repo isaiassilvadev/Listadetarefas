@@ -14,7 +14,9 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--cordefundo);
+  background: linear-gradient(to top, #111827, #523975);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--corfonte1);
 }
 
